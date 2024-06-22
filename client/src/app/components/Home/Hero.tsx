@@ -148,21 +148,13 @@ export default function Hero() {
               <hr className="d-md-none mt-2" />
               <div className="col-md-4 d-sm-flex align-items-center pt-4 pt-md-0">
                 <div className="d-flex align-items-center w-100 pt-2 pb-4 py-sm-0 ps-2 ps-sm-3 text-muted">
-                  <i className="me-2"></i>
+                  <i className="fi-cash me-2 fs-5"></i>
                   <span style={{ paddingRight: "1.125rem" }}>Price</span>
                   <Nouislider
                     range={{ min: 0, max: 1000 }}
                     start={price}
                     step={1}
                     tooltips={true}
-                    format={{
-                      to: (value) => {
-                        return `$${value}`;
-                      },
-                      from: (value) => {
-                        return Number(value);
-                      }
-                    }}
                     connect
                     className="w-100 pe-0 pe-sm-3"
                   />

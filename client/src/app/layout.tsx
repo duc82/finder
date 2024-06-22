@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
 import { Noto_Sans } from "next/font/google";
 import { BootstrapProvider } from "./providers/BootstrapProvider";
+import "swiper/css";
+import "swiper/css/pagination";
 import "./styles/main.scss";
+
 import Header from "./components/Header";
 
 const font = Noto_Sans({ subsets: ["latin"] });

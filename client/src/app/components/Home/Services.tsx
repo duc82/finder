@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { Pagination, Swiper, SwiperSlide } from "../Swiper";
 
 export default function Services() {
   const services = [
@@ -46,17 +47,33 @@ export default function Services() {
 
   return (
     <section className="container mb-5 mt-n3 mt-lg-0">
-      <div className="row">
+      <Swiper
+        slidesPerView={1}
+        spaceBetween={16}
+        breakpoints={{
+          576: {
+            slidesPerView: 2
+          },
+          992: {
+            slidesPerView: 3
+          }
+        }}
+        pagination={{
+          clickable: true
+        }}
+        modules={[Pagination]}
+        wrapperClass="py-3"
+      >
         {services.map((service, i) => (
-          <div className="col-12 col-lg-4" key={i}>
+          <SwiperSlide key={i}>
             <div className="card card-hover border-0 h-100 pb-2 pb-sm-3 px-sm-3 text-center">
               <Image
                 src={service.image.src}
                 alt={service.image.alt}
-                width={0}
+                width={256}
                 height={0}
                 sizes="100vw"
-                className="h-auto w-100 d-block mx-auto my-3"
+                className="h-auto d-block mx-auto my-3"
               />
               <div className="card-body">
                 <h2 className="h4 card-title">{service.title}</h2>
@@ -71,9 +88,9 @@ export default function Services() {
                 </Link>
               </div>
             </div>
-          </div>
+          </SwiperSlide>
         ))}
-      </div>
+      </Swiper>
     </section>
   );
 }
