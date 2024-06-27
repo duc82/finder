@@ -9,6 +9,13 @@ export function BootstrapProvider({ children }: React.PropsWithChildren) {
   useEffect(() => {
     const bootstrap = require("bootstrap/dist/js/bootstrap.bundle.min.js");
     setBootstrap(bootstrap);
+
+    const tooltipTriggerList = document.querySelectorAll(
+      '[data-bs-toggle="tooltip"]'
+    );
+    Array.from(tooltipTriggerList).map(
+      (tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl)
+    );
   }, []);
 
   return (

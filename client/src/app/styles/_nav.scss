@@ -1,0 +1,43 @@
+@import "variables";
+
+h1 .nav-link:hover,
+h2 .nav-link:hover,
+h3 .nav-link:hover,
+h4 .nav-link:hover,
+h5 .nav-link:hover,
+h6 .nav-link:hover,
+.h1 .nav-link:hover,
+.h2 .nav-link:hover,
+.h3 .nav-link:hover,
+.h4 .nav-link:hover,
+.h5 .nav-link:hover,
+.h6 .nav-link:hover {
+  color: $primary;
+}
+
+.nav-tabs {
+  .nav-item {
+    margin-right: 0.75rem;
+
+    .nav-link {
+      border-radius: 0.5rem;
+      box-shadow: none;
+      background-color: #f5f4f8;
+      color: #454056;
+      font-weight: normal;
+
+      &:hover {
+        color: $headings-color;
+        box-shadow: $box-shadow-sm;
+      }
+
+      &.active {
+        box-shadow: $box-shadow-sm;
+        color: $primary;
+        cursor: default;
+        pointer-events: none;
+        background-color: white;
+      }
+    }
+  }
+}
